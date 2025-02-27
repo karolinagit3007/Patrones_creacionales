@@ -95,7 +95,6 @@ class VacationDirector:
         self.builder.add_accommodation()
         self.builder.add_activities()
 
-# Ejecución
 beach_vacation_builder = BeachVacationBuilder()
 vacation_director = VacationDirector(beach_vacation_builder)
 vacation_director.construct_beach_vacation()

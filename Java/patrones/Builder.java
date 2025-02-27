@@ -150,13 +150,11 @@ class VacationDirector {
 
 public class Builder {
     public static void main(String[] args) {
-        // Crear vacaciones de playa
         VacationBuilder beachVacationBuilder = new BeachVacationBuilder();
         VacationDirector vacationDirector = new VacationDirector(beachVacationBuilder);
         vacationDirector.constructBeachVacation();
         System.out.println(beachVacationBuilder.getVacation());
 
-        // Crear vacaciones de montaña
         VacationBuilder mountainVacationBuilder = new MountainVacationBuilder();
         vacationDirector = new VacationDirector(mountainVacationBuilder);
         vacationDirector.constructMountainVacation();

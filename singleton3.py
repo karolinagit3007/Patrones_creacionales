@@ -10,28 +10,24 @@ class EventLogger:
 
     def __init__(self):
         if not hasattr(self, '_logs'):
-            self._logs = []  # Se usa una lista para mantener el orden de los eventos
+            self._logs = []  
 
     def log_event(self, message):
         timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         log_entry = f"[{timestamp}] {message}"
-        if log_entry not in self._logs:  # Verifica si el evento ya fue registrado
-            self._logs.append(log_entry)  # Agrega el evento en orden
+        if log_entry not in self._logs:  
+            self._logs.append(log_entry)  
 
     def show_logs(self):
-        return "\n".join(self._logs)  # Muestra los logs en el orden en que fueron registrados
+        return "\n".join(self._logs)  
 
-# Se crea una única instancia del logger
 logger1 = EventLogger()
 logger2 = EventLogger()
 
-# Se registran eventos desde diferentes instancias
 logger1.log_event("El sistema ha iniciado.")
 logger2.log_event("Usuario inició sesión.")
 logger1.log_event("Archivo guardado correctamente.")
 
-# Ver logs desde cualquier instancia
 print(logger1.show_logs())
 
-# Verificar que solo hay una instancia
-print(logger1 is logger2)  # True
+print(logger1 is logger2)  
